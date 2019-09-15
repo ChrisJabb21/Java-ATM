@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class OptionMenu extends Account {
 	
-	// make a global scanner object for menu input.
+	//make a global scanner object for menu input.
 	Scanner menuInput = new Scanner(System.in);
 	
 	DecimalFormat moneyFormat = 
@@ -24,8 +24,8 @@ public class OptionMenu extends Account {
 		//valid input
 		do {
 			try {
-				Acctdata.put(7891011, 1994);
-				Acctdata.put(0123456, 0222);
+				Acctdata.put(7891011,1994);
+				Acctdata.put(0123456,0222);
 				
 				System.out.println("Welcome to the ATM!");
 				
@@ -89,7 +89,7 @@ public class OptionMenu extends Account {
 	
 	public void getChecking()
 	{
-		System.out.println("Checking Account: ");
+		System.out.println("Checking Account");
 		System.out.println("Type a number to select a choice.");
 		System.out.println("1) - View Balance");
 		System.out.println("2) - Withdraw funds");
@@ -104,15 +104,15 @@ public class OptionMenu extends Account {
 		case 1:
 			//view CA balance
 				//Call acct_menu prompt
-			System.out.println("Current CA Balance: " + moneyFormat.format(getCheckingBalance()));
+			System.out.println("Current CA Balance is " + moneyFormat.format(getCheckingBalance()));
 			getAcctType();
 			break;
 		case 2: 
-			getCheckingWithdrawInput();
+			CheckingWithdrawInput();
 			getAcctType();
 			break;
 		case 3: 
-			getCheckingDepositInput();
+			CheckingDepositInput();
 			getAcctType();
 			break;
 		case 4:
@@ -148,11 +148,11 @@ public class OptionMenu extends Account {
 			getAcctType();
 			break;
 		case 2: 
-			getSavingWithdrawInput();
+			SavingWithdrawInput();
 			getAcctType();
 			break;
 		case 3: 
-			getSavingDepositInput();
+			SavingDepositInput();
 			getAcctType();
 			break;
 		case 4:

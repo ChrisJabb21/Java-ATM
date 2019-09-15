@@ -78,7 +78,10 @@ public class Account {
 	 * Input functions 
 	 * */
 	
-	public void getCheckingWithdrawInput()
+	
+	
+	/* Withdraw Input function*/
+	public void CheckingWithdrawInput()
 	{
 		System.out.println("Current Checking Account Balance: " + moneyFormat.format(checkingBalance));
 		System.out.println("Enter the amount you "
@@ -95,12 +98,11 @@ public class Account {
 		else {
 			System.out.println("Balance cannot be negative");
 		}
-		
-		
 	}
 	
 	
-	public void getSavingWithdrawInput()
+	
+	public void SavingWithdrawInput()
 	{
 		System.out.println("Current Saving Account Balance: " + moneyFormat.format(savingBalance));
 		System.out.println("Enter the amount you "
@@ -110,7 +112,7 @@ public class Account {
 		//check input
 		if((savingBalance - amount) >= 0) 
 		{
-			calcCheckingWithdraw(amount);
+			calcSavingWithdraw(amount);
 			System.out.println("New Saving " + "Account balance: " 
 			+ moneyFormat.format(savingBalance));
 		}
@@ -122,18 +124,19 @@ public class Account {
 	}
 	
 	
+	/*Deposit input functions*/
 	
-	public void getCheckingDepositInput()
+	public void CheckingDepositInput()
 	{
 		System.out.println("Current Checking Account Balance: "+ moneyFormat.format(checkingBalance));
 		System.out.println("Enter the amount you "
-				+ "want to withdraw from Checking Account: ");
+				+ "want to Deposit into your Checking Account: ");
 		double amount = input.nextDouble();
 		
 		//check input
 		if((checkingBalance + amount) >= 0) 
 		{
-			calcCheckingWithdraw(amount);
+			calcCheckingDeposit(amount);
 			System.out.println("New Checking " + "Account balance: " 
 			+ moneyFormat.format(checkingBalance));
 		}
@@ -143,7 +146,7 @@ public class Account {
 	}
 	
 	
-	public void getSavingDepositInput()
+	public void SavingDepositInput()
 	 {
 		
 			System.out.println("Total Checking Account Balance: " + moneyFormat.format(checkingBalance));
@@ -154,7 +157,7 @@ public class Account {
 			//check input
 			if((checkingBalance + amount) >= 0) 
 			{
-				calcCheckingWithdraw(amount);
+				calcSavingDeposit(amount);
 				System.out.println("New Checking " + "Account balance: " 
 				+ moneyFormat.format(checkingBalance));
 			}
